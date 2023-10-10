@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import { FontAwesome } from "@expo/vector-icons";
 
-import colors, { TMDB_API_KEY } from "../config/colors";
+import colors, { TMDB_API_KEY } from "../config/constants";
 import Loader from "../components/Loader";
 import Screen from "../components/Screen";
 import * as commonService from "../services/commonService";

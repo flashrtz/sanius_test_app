@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import axios from "axios";
 
-import colors, { TMDB_API_KEY } from "../config/colors";
+import colors, { TMDB_API_KEY } from "../config/constants";
 import Loader from "../components/Loader";
 import Screen from "../components/Screen";
 import AsyncStorage from "@react-native-async-storage/async-storage";

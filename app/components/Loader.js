@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Text } from "react-native";
 import AnimatedLoader from "react-native-animated-loader";
 
-import colors from "../config/colors";
+import colors from "../config/constants";
 
 function Loader(props) {
   const [visible, setVisible] = useState(true);

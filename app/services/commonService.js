@@ -1,5 +1,5 @@
 import axios from "../config/axiosInstance";
-import { TMDB_API_KEY } from "../config/colors";
+import { TMDB_API_KEY } from "../config/constants";
 const apiKey = TMDB_API_KEY;
 
 export const searchMovie = async ({ searchInput }) => {
