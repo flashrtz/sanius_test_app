@@ -122,18 +122,16 @@ function FavoriteScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.medium,
     borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
-    alignSelf: "center",
-    padding: 15,
-    width: 250,
+    padding: 10,
+    width: "100%",
     marginVertical: 5,
-    marginBottom: 10,
   },
   buttonText: {
-    color: colors.white,
+    color: colors.black,
     fontSize: 18,
     textTransform: "uppercase",
     fontWeight: "bold",
@@ -159,7 +157,7 @@ const styles = StyleSheet.create({
   imageMargin: {
     marginTop: 20,
     marginLeft: 20,
-    height : "60%"
+    height: "60%",
   },
   input: {
     backgroundColor: colors.white,

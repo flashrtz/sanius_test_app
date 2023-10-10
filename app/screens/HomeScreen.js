@@ -28,7 +28,6 @@ function HomeScreen({ navigation }) {
   const [showSearch, setShowSearch] = useState(false);
   const [currentData, setCurrentData] = useState([]);
 
-  const apiKey = TMDB_API_KEY;
   const apiReq = async () => {
     try {
       const resSearchedMovies = await commonService.searchMovie({

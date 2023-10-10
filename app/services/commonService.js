@@ -56,23 +56,14 @@ export const getUpcomingMovies = async ({ searchInput }) => {
     throw err;
   }
 };
-// const resSearchedMovies = await axios(
-//     `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchInput}`
-//   );
-//   const respNowPlaying = await axios(
-//     `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`
-//   );
-//   const respTopRatedMovies = await axios(
-//     `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US`
-//   );
 
-// export const getAll = async (dataParams) => {
-//     try {
-//       const getAllResults = await axios.get(`${apiUrl}/api/....`, {
-//         params: dataParams,
-//       });
-//       return getAllResults;
-//     } catch (err) {
-//       throw err;
-//     }
-//   };
+export const getMovieById = async (id) => {
+  try {
+    const resMovie = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+    );
+    return resMovie;
+  } catch (err) {
+    throw err;
+  }
+};

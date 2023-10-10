@@ -13,6 +13,7 @@ import colors, { TMDB_API_KEY } from "../config/colors";
 import Loader from "../components/Loader";
 import Screen from "../components/Screen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as commonService from "../services/commonService";
 
 function MovieScreen({ route, navigation }) {
   const { id } = route.params;
@@ -25,9 +26,7 @@ function MovieScreen({ route, navigation }) {
 
   const apiReq = async () => {
     try {
-      const respSelectedMovie = await axios(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
-      );
+      const respSelectedMovie = await commonService.getMovieById(id);
       setSelectedMovie(respSelectedMovie.data);
       let currentListString = await AsyncStorage.getItem("favorites");
       const filmIds = currentListString ? JSON.parse(currentListString) : [];
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-    width: "100%",
+    width: 150,
     marginVertical: 5,
   },
   buttonText: {
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: colors.secondary,
-    width: 350,
+    width: "90%",
     height: 350,
     flex: 1,
     borderRadius: 15,
