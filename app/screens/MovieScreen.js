@@ -82,21 +82,22 @@ function MovieScreen({ route, navigation }) {
                 {selectedMovie.release_date}
               </Text>
             </View>
-            <ScrollView>
+            <ScrollView style={styles.scrollStyle}>
               <Text style={styles.description}>{selectedMovie.overview}</Text>
             </ScrollView>
+            {!isHidden && (
+              <View>
+                <TouchableOpacity
+                  onPress={() => addToFavorites(selectedMovie.id)}
+                >
+                  <Text style={styles.ratingTitle}>★ Add to Favorites</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
-          {!isHidden && (
-            <View>
-              <TouchableOpacity
-                onPress={() => addToFavorites(selectedMovie.id)}
-              >
-                <Text style={styles.ratingTitle}>★ Add to Favorites</Text>
-              </TouchableOpacity>
-            </View>
-          )}
         </View>
       )}
+
       <TouchableOpacity
         onPress={() => navigation.navigate("HomeScreen")}
         style={styles.button}
@@ -126,7 +127,6 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.secondary,
     width: "90%",
-    height: 350,
     flex: 1,
     borderRadius: 15,
     margin: 10,
@@ -167,6 +167,10 @@ const styles = StyleSheet.create({
     color: "#FFD700",
     fontSize: 20,
     fontWeight: "bold",
+  },
+  scrollStyle: {
+    maxHeight: "45%",
+    marginBottom: 5,
   },
 });
 
