@@ -36,7 +36,7 @@ function HomeScreen({ navigation }) {
       const resNowPlaying = await commonService.getNowPlayingMovies();
       const resTopRatedMovies = await commonService.getTopRatedMovies();
       const resPopularMovies = await commonService.getPopularMovies();
-      const resUpComingMovies = await commonService.getPopularMovies();
+      const resUpComingMovies = await commonService.getUpcomingMovies();
 
       setData({
         searchedMovies: resSearchedMovies.data.results,
@@ -179,7 +179,7 @@ function HomeScreen({ navigation }) {
                   Search
                   <Text style={styles.highlight}> Results</Text>
                 </Text>
-                <View>
+                <View style={styles.filmListBody}>
                   {data.searchedMovies.length == 0 ? (
                     <Text style={styles.notFound}>
                       Sorry, we couldn't find that movie. Try again.
@@ -218,7 +218,7 @@ function HomeScreen({ navigation }) {
               </View>
             )}
             {showSearch == false && (
-              <View>
+              <View style={styles.filmListBody}>
                 <FlatList
                   showsHorizontalScrollIndicator={false}
                   style={styles.imageMargin}
@@ -370,6 +370,9 @@ const styles = StyleSheet.create({
   mainAlign: {
     marginBottom: 10,
     alignItems: "center",
+  },
+  filmListBody: {
+    maxHeight: "90%",
   },
 });
 

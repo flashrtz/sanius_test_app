@@ -46,10 +46,10 @@ export const getTopRatedMovies = async () => {
   }
 };
 
-export const getUpcomingMovies = async ({ searchInput }) => {
+export const getUpcomingMovies = async () => {
   try {
     const searchMovieRes = await axios.get(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&query=${searchInput}`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US`
     );
     return searchMovieRes;
   } catch (err) {
